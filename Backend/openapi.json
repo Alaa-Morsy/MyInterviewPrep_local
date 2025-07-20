@@ -1,0 +1,22 @@
+{"openapi":"3.1.0",
+"info":{"title":"FastAPI","version":"0.1.0"},
+"paths":{
+    "/api/questions/generate":{
+        "post":{
+            "summary":"Generate Questions",
+            "operationId":"generate_questions_api_questions_generate_post",
+            "parameters":[
+                {"name":"SaveToUserDB",
+                "in":"query",
+                "required":false,
+                "schema":{"anyOf":[{"type":"boolean"},{"type":"null"}],
+                "default":false,"title":"Savetouserdb"}}],
+                "requestBody":{"required":true,
+                "content":{
+                    "application/json":{
+                        "schema":{"$ref":"#/components/schemas/GenerateRequest"}}}},
+                        "responses":{"200":{"description":"Successful Response",
+                        "content":{"application/json":{"schema":{}}}},
+                        "422":{"description":"Validation Error",
+                        "content":{"application/json":
+                        {"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/api/questions":{"get":{"summary":"Get Questions","operationId":"get_questions_api_questions_get","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{}}}}}},"post":{"summary":"Modify And Save Questions","operationId":"modify_and_save_questions_api_questions_post","parameters":[{"name":"question_id","in":"query","required":true,"schema":{"type":"string","title":"Question Id"}},{"name":"difficulty","in":"query","required":false,"schema":{"anyOf":[{"$ref":"#/components/schemas/QuestionDifficulty"},{"type":"null"}],"default":"medium","title":"Difficulty"}},{"name":"IsInterresting","in":"query","required":false,"schema":{"anyOf":[{"type":"boolean"},{"type":"null"}],"default":false,"title":"Isinterresting"}}],"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/api/questions/{question_id}":{"delete":{"summary":"Delete Question","operationId":"delete_question_api_questions__question_id__delete","parameters":[{"name":"question_id","in":"path","required":true,"schema":{"type":"string","title":"Question Id"}}],"responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{}}}},"422":{"description":"Validation Error","content":{"application/json":{"schema":{"$ref":"#/components/schemas/HTTPValidationError"}}}}}}},"/api/stats":{"get":{"summary":"Get Stats","operationId":"get_stats_api_stats_get","responses":{"200":{"description":"Successful Response","content":{"application/json":{"schema":{}}}}}}}},"components":{"schemas":{"GenerateRequest":{"properties":{"job_title":{"type":"string","title":"Job Title"},"num_technical":{"anyOf":[{"type":"integer"},{"type":"null"}],"title":"Num Technical","default":1},"num_behavioral":{"anyOf":[{"type":"integer"},{"type":"null"}],"title":"Num Behavioral","default":1}},"type":"object","required":["job_title"],"title":"GenerateRequest"},"HTTPValidationError":{"properties":{"detail":{"items":{"$ref":"#/components/schemas/ValidationError"},"type":"array","title":"Detail"}},"type":"object","title":"HTTPValidationError"},"QuestionDifficulty":{"type":"string","enum":["easy","medium","hard"],"title":"QuestionDifficulty"},"ValidationError":{"properties":{"loc":{"items":{"anyOf":[{"type":"string"},{"type":"integer"}]},"type":"array","title":"Location"},"msg":{"type":"string","title":"Message"},"type":{"type":"string","title":"Error Type"}},"type":"object","required":["loc","msg","type"],"title":"ValidationError"}}}}
