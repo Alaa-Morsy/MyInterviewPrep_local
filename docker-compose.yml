@@ -22,8 +22,7 @@ services:
     depends_on:
       - db
     environment:
-      #- GEMINI_API_KEY= your_api_key_here
-      GEMINI_API_KEY: "AIzaSyDaRKVknYUuNyYVDugRUyBela_j7mSFdHQ"
+      GEMINI_API_KEY: "Your API Password here"
       DATABASE_URL: "postgresql://postgres:postgres@db:5432/interview_prep" 
  
   db: 
