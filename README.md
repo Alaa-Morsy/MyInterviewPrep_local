@@ -151,7 +151,7 @@ GET /api/stats
 - **Database Migrations**: No Alembic integration; schema changes require manual table recreation.
 - **Concurrency**: In-memory lists (`QUESTIONS_DB_GENERATED`) are not thread-safe and should not be used in production.
 - **Docker Compose**: Initial Docker build takes 8-12 minutes, requires minimum 2GB RAM. Make sure ports do not conflict with other local services.
-- **Frontend**: You might face some problems with React so, make you that you inspect my Backend using 'localhost:8000\docs'
+- **Frontend**: You might face some problems with React so, make you that you inspect my Backend using `localhost:8000\docs`
 
 ---
 
