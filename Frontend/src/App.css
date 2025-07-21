@@ -1,0 +1,147 @@
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.error {
+  color: red;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid red;
+  border-radius: 4px;
+}
+
+.loading {
+  text-align: center;
+  padding: 10px;
+}
+
+section {
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.filter-form, form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+input, select, textarea {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+textarea {
+  min-height: 80px;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  align-self: flex-end;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.questions-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.question-card {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.question-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.job-title {
+  font-weight: bold;
+}
+
+.question-type {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+.question-type.technical {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.question-type.behavioral {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.difficulty {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+}
+
+.difficulty.easy {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.difficulty.medium {
+  background-color: #fff8e1;
+  color: #ffa000;
+}
+
+.difficulty.hard {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.question-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.question-actions button {
+  flex: 1;
+}
+
+button.delete {
+  background-color: #f44336;
+}
+
+button.delete:hover {
+  background-color: #d32f2f;
+}
