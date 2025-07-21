@@ -1,20 +1,41 @@
 version: "3"
 services:
- backend:
-  build: ./Backend
-  ports:
-   - "8000:8000"
-  volumes:
-   - ./Backend:/app
-  environment:
-    #GEMINI_API_KEY:"your_api_key_here"
-    GEMINI_API_KEY: "AIzaSyDaRKVknYUuNyYVDugRUyBela_j7mSFdHQ"
- 
- #Database:
-  #image: "postgres"
-  #environment:
-   #POSTGRES_PASSWORD: "password"
+  #frontend:
+  #  build: ./Frontend
+  #  ports:
+  #    - "3000:3000"
+  #  volumes:
+  #    - ./Frontend:/app
+  #    - ./Frontend/node_modules:/app/node_modules
+  #  depends_on:
+  #    - backend
+  #    - db
+  #  environment:
+  #    REACT_APP_API_URL: "http://localhost:8000"
 
- #Frontend:
-  #build: .\frontend
-  #ports: 
+  backend:
+    build: ./Backend
+    ports:
+     - "8000:8000"
+    volumes:
+     - ./Backend:/app
+    depends_on:
+      - db
+    environment:
+      #- GEMINI_API_KEY= your_api_key_here
+      GEMINI_API_KEY: "AIzaSyDaRKVknYUuNyYVDugRUyBela_j7mSFdHQ"
+      DATABASE_URL: "postgresql://postgres:postgres@db:5432/interview_prep" 
+ 
+  db: 
+    image: postgres:14   
+    ports: 
+     - "5433:5432"  
+    environment: 
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      POSTGRES_DB: "interview_prep"
+    volumes: 
+     - postgres_data:/var/lib/postgresql/data  
+    
+volumes:
+ postgres_data: 

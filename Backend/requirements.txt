@@ -1,10 +1,15 @@
 enum34==1.1.10
 fastapi==0.116.1
+fastapi-cors==0.0.6
 google-genai==1.26.0
 httptools==0.6.4
 pydantic==2.11.7
 pydantic_core==2.33.2
 python-dotenv==1.1.1
+psycopg2-binary==2.9.10
+sqlalchemy==2.0.41
+sqlalchemy-orm==1.2.10
+sqlalchemy-declarative-extensions==0.1.0
 typing==3.7.4.3
 typing-inspection==0.4.1
 typing_extensions==4.14.1
