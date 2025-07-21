@@ -24,14 +24,10 @@ graph LR
 - PostgreSQL (for database)
 - FastAPI (for backend)
 - Gemini API Key (for question generation)
-
+Note: This project was implemented on Ubuntu 25
 ### Setup Steps
 
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd MyInterviewPrep
-   ```
+1. ** Download the repository**
 
 2. **Configure Environment Variables**
    - Edit `docker-compose.yml` and set your `GEMINI_API_KEY` under `backend.environment`.
